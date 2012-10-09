@@ -1,0 +1,63 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   Negocios_JavaNet/Negocios_JavaNet1.1.suo
+#	new file:   Negocios_JavaNet/WebStore/App_Data/ASPNETDB.MDF
+#	new file:   Negocios_JavaNet/WebStore/App_Data/aspnetdb_log.ldf
+#	modified:   Negocios_JavaNet/WebStore/Properties/Settings.Designer.cs
+#	modified:   Negocios_JavaNet/WebStore/Properties/Settings.settings
+#	modified:   Negocios_JavaNet/WebStore/RegistrarCliente.aspx
+#	modified:   Negocios_JavaNet/WebStore/RegistrarCliente.aspx.cs
+#	modified:   Negocios_JavaNet/WebStore/RegistrarCliente.aspx.designer.cs
+#	renamed:    Negocios_JavaNet/WebStore/Web References/validapersona/PersonaServiceImplService.wsdl -> Negocios_JavaNet/WebStore/Web References/serviciosrping/PersonaServiceImplService.wsdl
+#	renamed:    Negocios_JavaNet/WebStore/Web References/validapersona/Reference.cs -> Negocios_JavaNet/WebStore/Web References/serviciosrping/Reference.cs
+#	renamed:    Negocios_JavaNet/WebStore/Web References/validapersona/Reference.map -> Negocios_JavaNet/WebStore/Web References/serviciosrping/Reference.map
+#	new file:   Negocios_JavaNet/WebStore/Web References/serviciosrping/persona.datasource
+#	modified:   Negocios_JavaNet/WebStore/Web.config
+#	modified:   Negocios_JavaNet/WebStore/WebStore.csproj
+#	modified:   Negocios_JavaNet/WebStore/bin/WebStore.dll
+#	modified:   Negocios_JavaNet/WebStore/bin/WebStore.pdb
+#	modified:   Negocios_JavaNet/WebStore/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   Negocios_JavaNet/WebStore/obj/Debug/TempPE/Web References.serviciodemo.Reference.cs.dll
+#	new file:   Negocios_JavaNet/WebStore/obj/Debug/TempPE/Web References.serviciosrping.Reference.cs.dll
+#	new file:   Negocios_JavaNet/WebStore/obj/Debug/TempPE/Web References.validaperson.Reference.cs.dll
+#	modified:   Negocios_JavaNet/WebStore/obj/Debug/TempPE/Web References.validapersona.Reference.cs.dll
+#	modified:   Negocios_JavaNet/WebStore/obj/Debug/WebStore.csproj.FileListAbsolute.txt
+#	modified:   Negocios_JavaNet/WebStore/obj/Debug/WebStore.dll
+#	modified:   Negocios_JavaNet/WebStore/obj/Debug/WebStore.pdb
+#	new file:   SQL/Reniec.sql
+#	modified:   webPersona/.classpath
+#	modified:   webPersona/.springBeans
+#	modified:   webPersona/pom.xml
+#	new file:   webPersona/src/main/java/pe/reniec/webpersona/dao/BaseDao.java
+#	new file:   webPersona/src/main/java/pe/reniec/webpersona/dao/dao.java
+#	new file:   webPersona/src/main/java/pe/reniec/webpersona/excepcion/DAOExcepcion.java
+#	new file:   webPersona/src/main/java/pe/reniec/webpersona/modelo/Persona.java
+#	new file:   webPersona/src/main/java/pe/reniec/webpersona/negocio/PersonaNegocio.java
+#	modified:   webPersona/src/main/java/pe/reniec/webpersona/service/PersonaService.java
+#	modified:   webPersona/src/main/java/pe/reniec/webpersona/service/PersonaServiceImpl.java
+#	new file:   webPersona/src/main/java/pe/reniec/webpersona/util/ConexionBD.java
+#	new file:   webPersona/src/main/resources/Configuracion.xml
+#	modified:   webPersona/src/main/webapp/WEB-INF/applicationContext.xml
+#	new file:   webPersona/src/main/webapp/WEB-INF/lib/mysql-connector-java-5.1.12-bin.jar
+#	new file:   webPersona/src/main/webapp/WEB-INF/lib/sqljdbc4.jar
+#	modified:   webPersona/src/main/webapp/WEB-INF/web.xml
+#	new file:   webPersona/src/test/java/pe/reniec/webpersona/service/test/PersonaServiceTest.java
+#	new file:   webPersona/target/classes/Configuracion.xml
+#	new file:   webPersona/target/classes/pe/reniec/webpersona/dao/BaseDao.class
+#	new file:   webPersona/target/classes/pe/reniec/webpersona/dao/dao.class
+#	new file:   webPersona/target/classes/pe/reniec/webpersona/excepcion/DAOExcepcion.class
+#	new file:   webPersona/target/classes/pe/reniec/webpersona/modelo/Persona.class
+#	new file:   webPersona/target/classes/pe/reniec/webpersona/negocio/PersonaNegocio.class
+#	modified:   webPersona/target/classes/pe/reniec/webpersona/service/PersonaServiceImpl.class
+#	new file:   webPersona/target/classes/pe/reniec/webpersona/util/ConexionBD.class
+#	modified:   webPersona/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+#	modified:   webPersona/target/m2e-wtp/web-resources/META-INF/maven/pe.reniec/webPersona/pom.properties
+#	modified:   webPersona/target/m2e-wtp/web-resources/META-INF/maven/pe.reniec/webPersona/pom.xml
+#	new file:   webPersona/target/test-classes/pe/reniec/webpersona/service/test/PersonaServiceTest.class
+#
+

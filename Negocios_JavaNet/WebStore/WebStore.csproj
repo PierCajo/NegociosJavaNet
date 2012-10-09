@@ -203,6 +203,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Web References\serviciosrping\persona.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\serviciosrping\PersonaServiceImplService.wsdl" />
     <None Include="Web References\serviciosrping\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

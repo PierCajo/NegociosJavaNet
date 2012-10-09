@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using rnd = WebStore.serviciosrping;
 using System.Drawing;
+using System.Data;
+using System.Data.SqlClient;
+using System.Collections;
 
 
 	
@@ -18,35 +21,35 @@ namespace WebStore
 
         }
 
-        protected void BtnRegistrar_Click(object sender, EventArgs e)
+       protected void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            String dni;
+            dni = txtDni.Text;
+            DataTable dT = new DataTable();                 
             rnd.PersonaServiceImplService svc = new rnd.PersonaServiceImplService();
-            txtApellidos.Text = svc.validaPersona(txtDni.Text);
-            List lst=new List();
-            //= svc.validaPersonaInfo("43873938").;
-            /*
-            rnd.PersonaServiceImplService wsRnd = new rnd.PersonaServiceImplService();
-            int valida = wsRnd.validaPersona(txtDni.Text);
-            if (valida == 1)
+            var ObjPersona = svc.validaPersonaInfo(dni);
+            DataTable dt = new DataTable();
+            int estado = 0;
+            foreach (var persona in ObjPersona) 
             {
-                lblResultado.Text = "Registro Completo ... ";
+                estado = persona.estado;
+                txtNombres.Text = persona.nombres.ToString();
+                txtApellidos.Text = persona.apellidos.ToString();
+                txtDireccion.Text = persona.direccion.ToString();
+                txtTelefono.Text = persona.telefono.ToString();          
+            }
+
+            if (estado == 1)
+            {
+                lblResultado.Text = "Usted esta autorizado para registrarse";
                 lblResultado.ForeColor = System.Drawing.Color.Blue;
-                Response.AddHeader("REFRESH", "3;URL=Catalogo.aspx");                
+                //Response.AddHeader("REFRESH", "3;URL=Catalogo.aspx");                
             }
             else
             {
                 lblResultado.ForeColor = System.Drawing.Color.Red;
-                lblResultado.Text = "Ustede No Puede Registrarse";
-            }*/
-            //rnd.PersonaServiceImplService wsRnd = new rnd.PersonaServiceImplService();
-
-            //String demo = wsRnd.validaPersonaInfo("rr");
-           // txtNombres.Text = demo.ToString();
-            //String valorwe = wsRnd.validaPersona(txtDni.Text);
-
-            ///Label1.Text = valorwe;
-
-
+                lblResultado.Text = "Ustede No Puede Registrarse por encontrarse deshabilitado en la Reniec";
+            }
             //String valida = wsRnd.validaPersonaInfo(txtDni.Text);
             //String csv = valida;
             //String[] parts = csv.Split(';');
@@ -67,11 +70,8 @@ namespace WebStore
             //{
             //    lblResultado.ForeColor = System.Drawing.Color.Red;
             //    lblResultado.Text = "Ustede No Puede Registrarse";
-            //}
-
-            
+            //}            
         }
-
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("index.aspx");

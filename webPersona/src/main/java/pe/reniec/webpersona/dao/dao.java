@@ -47,8 +47,8 @@ public class dao extends BaseDao {
 		}
 	}
 
-	public String ValidarInfo(String dni) throws DAOExcepcion {
-		//Collection<Persona> lstPersona = new ArrayList<Persona>();
+	public Collection<Persona> ValidarInfo(String dni) throws DAOExcepcion {
+	Collection<Persona> lstPersona = new ArrayList<Persona>();
 	Connection con = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
@@ -82,7 +82,7 @@ public class dao extends BaseDao {
 					persona.setTelefono(rs.getString("telefono"));
 					persona.setEstado(rs.getInt("estado"));
 					System.out.println(persona.getApellidos());
-					//lstPersona.add(persona);
+					lstPersona.add(persona);
 				//}
 			} else {
 				
@@ -92,7 +92,7 @@ public class dao extends BaseDao {
 				persona.setDireccion("No Autorizada");
 				persona.setTelefono("No Autorizada");
 				persona.setEstado(0);
-				//lstPersona.add(persona);
+				lstPersona.add(persona);
 			}
 
 		} catch (SQLException e) {
@@ -105,7 +105,7 @@ public class dao extends BaseDao {
 		}
 		System.out.println("listado de personas");
 		//System.out.println(lstPersona.size());
-		//return lstPersona;
-		return  persona.getApellidos();
+		return lstPersona;
+		//return  persona.getApellidos();
 	}
 }

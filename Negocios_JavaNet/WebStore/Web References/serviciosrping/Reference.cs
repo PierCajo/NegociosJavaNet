@@ -33,6 +33,8 @@ namespace WebStore.serviciosrping {
         
         private System.Threading.SendOrPostCallback validaPersonaOperationCompleted;
         
+        private System.Threading.SendOrPostCallback validaPersonaInfoTestOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -76,6 +78,9 @@ namespace WebStore.serviciosrping {
         
         /// <remarks/>
         public event validaPersonaCompletedEventHandler validaPersonaCompleted;
+        
+        /// <remarks/>
+        public event validaPersonaInfoTestCompletedEventHandler validaPersonaInfoTestCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://service.webpersona.reniec.pe/", ResponseNamespace="http://service.webpersona.reniec.pe/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -134,6 +139,36 @@ namespace WebStore.serviciosrping {
             if ((this.validaPersonaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.validaPersonaCompleted(this, new validaPersonaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://service.webpersona.reniec.pe/", ResponseNamespace="http://service.webpersona.reniec.pe/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public persona[] validaPersonaInfoTest([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string dni) {
+            object[] results = this.Invoke("validaPersonaInfoTest", new object[] {
+                        dni});
+            return ((persona[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void validaPersonaInfoTestAsync(string dni) {
+            this.validaPersonaInfoTestAsync(dni, null);
+        }
+        
+        /// <remarks/>
+        public void validaPersonaInfoTestAsync(string dni, object userState) {
+            if ((this.validaPersonaInfoTestOperationCompleted == null)) {
+                this.validaPersonaInfoTestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnvalidaPersonaInfoTestOperationCompleted);
+            }
+            this.InvokeAsync("validaPersonaInfoTest", new object[] {
+                        dni}, this.validaPersonaInfoTestOperationCompleted, userState);
+        }
+        
+        private void OnvalidaPersonaInfoTestOperationCompleted(object arg) {
+            if ((this.validaPersonaInfoTestCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.validaPersonaInfoTestCompleted(this, new validaPersonaInfoTestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -291,6 +326,32 @@ namespace WebStore.serviciosrping {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    public delegate void validaPersonaInfoTestCompletedEventHandler(object sender, validaPersonaInfoTestCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class validaPersonaInfoTestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal validaPersonaInfoTestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public persona[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((persona[])(this.results[0]));
             }
         }
     }
